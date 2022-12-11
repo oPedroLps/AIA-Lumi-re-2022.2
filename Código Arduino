@@ -1,0 +1,50 @@
+// C++ code
+//
+#define windowsPin1 5
+#define windowsPin2 4
+#define windowsPin3 3
+#define ledPin1 13
+#define ledPin2 11
+#define ledPin3 9
+bool windowsStatus = 0;
+
+void setup()
+{
+    pinMode(windowsPin1, INPUT_PULLUP);
+    pinMode(windowsPin2, INPUT_PULLUP);
+    pinMode(windowsPin3, INPUT_PULLUP);
+    pinMode(ledPin1, OUTPUT);
+    pinMode(ledPin2, OUTPUT);
+    pinMode(ledPin3, OUTPUT);
+}
+
+void loop()
+{
+    windowsStatus = digitalRead(windowsPin1);
+    if(windowsStatus == 0)
+    {
+        digitalWrite(ledPin1, 1);
+    }
+    else
+    {
+        digitalWrite(ledPin1, 0);
+    }
+  windowsStatus = digitalRead(windowsPin2);
+    if(windowsStatus == 0)
+    {
+        digitalWrite(ledPin2, 1);
+    }
+    else
+    {
+        digitalWrite(ledPin2, 0);
+    }
+  windowsStatus = digitalRead(windowsPin3);
+    if(windowsStatus == 0)
+    {
+        digitalWrite(ledPin3, 1);
+    }
+    else
+    {
+        digitalWrite(ledPin3, 0);
+    }
+}
